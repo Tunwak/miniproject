@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: mini-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: mini_db
+
+  mysql:
+    image: mysql:8.0
+    container_name: mini-mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: mini_db
